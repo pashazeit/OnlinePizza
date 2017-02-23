@@ -1,0 +1,57 @@
+/*create SCHEMA */
+CREATE DATABASE `pizza` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+/*table ordertable*/
+CREATE TABLE `ordertable` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_person` varchar(255) DEFAULT NULL,
+  `number_tel` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `name_pizz` varchar(255) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `date_pizz` date DEFAULT NULL,
+  `id_order` varchar(75) NOT NULL,
+  `pizza_qty` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`,`id_order`),
+  UNIQUE KEY `order_id_uindex` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=utf8;
+
+
+/*
+table Pizza*/
+CREATE TABLE `pzz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `titl` varchar(1000) NOT NULL,
+  `price` int(11) NOT NULL,
+  `picpiz` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+
+/*table cartpizza*/
+CREATE TABLE `cartpizza` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cart_id` varchar(75) NOT NULL,
+  `pizza_id` int(11) DEFAULT NULL,
+  `pizza_qty` int(11) DEFAULT NULL,
+  `order_summ` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`,`cart_id`),
+  UNIQUE KEY `cart_id_uindex` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `pizza`.`pzz`
+(`name`,
+ `url`,
+ `titl`,
+ `price`,
+ `picpiz`)
+VALUES
+  ('Пицца Пцанская',
+   'http://www.tfo.su/uploads5/2010_05_18_17_36_10_01.jpg',
+   'Вкуснейшая пицца на основе из чипсов, с сушеной воблой и отборными семечками подсолнуха',
+   '12',
+   '');
