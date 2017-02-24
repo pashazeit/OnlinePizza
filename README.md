@@ -7,7 +7,7 @@
 <b>Administrator</b> - Administration page. add \ delete \ editing. View orders - on various parameters
 
 <b>Hibernate <br>
-Spring <br>
+Spring MVC<br>
 DataBase <br>
 JavaMail <br>
 Logging <br>
